@@ -108,7 +108,7 @@ function handleRequest(self,url,fn){
 
 Spider.prototype.handleData = function (data){
 
-	var jsonStr = JSON.stringify(data)
+	var jsonStr = JSON.stringify(data) + '\n';
 	fs.appendFile(path.join(this.filePath,'companies.json'),jsonStr,'utf-8',function(err){
 
 		if(err){
