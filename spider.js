@@ -43,19 +43,22 @@ Spider.prototype.capture = function (url){
 	var self = this,
 	zhappinKeyWord=['加入我们','招贤纳士','诚聘英才','招聘信息','招聘'];
 
+
+	//todo： 待重构 使用Promise方式
     //处理it桔子上的公司信息
     handleRequest(self,url,function($){
         //抓取规则处理，比如$('.title').text()
 		//给jsonResult属性赋值
         //写入companies.json
-        this.handleData(jsonResult);
-    });
 
-    //处理该公司主页上的招聘连接
-    handleRequest(self,jsonResult.companyUrl,function($){
+        //处理该公司主页上的招聘连接
+        handleRequest(self,jsonResult.companyUrl,function($){
 
-    	//根据zhappinKeyWord过滤出招聘网站信息,如果有的话
-    	//jsonResult.zhaopinUrl = 'www.xxx.com/job'
+    		//根据zhappinKeyWord过滤出招聘网站信息,如果有的话
+    		//jsonResult.zhaopinUrl = 'www.xxx.com/job'
+    		this.handleData(jsonResult);
+
+    	});
     });
 
     this.captureNum--;
