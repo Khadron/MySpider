@@ -33,11 +33,11 @@ Spider.prototype.crawl = function (){
 Spider.prototype.capture = function (url){
 
 	var jsonResult = {
-		product:'',
-		company:'',
-		companyUrl:'',
-		site:'',
-		zhaopinUrl:''
+		product:'', //产品名称
+		company:'', //公司名称
+		companyUrl:'', //公司网址
+		site:'', //地点
+		zhaopinUrl:'' //招聘网址
 	};
 
 	var self = this,
