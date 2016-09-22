@@ -2,7 +2,7 @@
 var Spider = require('./spider');
 
 var options = {
-	captureNum:3,
+	captureNum:1000,
 	filePath: __dirname,
 	entryUrl: 'http://itjuzi.com/company/1786',
 	urlRule: function(url){
